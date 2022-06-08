@@ -4,7 +4,7 @@
 A mobile app for safely storing your precious passwords physically.
 
 ## Installation
-1. Navigate to [https://github.com/18dsmith/CaptureCode/releases](url) and click on the blue _"source code"_ button at the bottom of a release.
+1. Navigate to https://github.com/18dsmith/CaptureCode/releases and click on the blue _"source code"_ button at the bottom of a release.
 2. Install the dependencies for this program.
 In command prompt do the following:
 ```
