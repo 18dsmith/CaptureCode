@@ -107,7 +107,7 @@ character_list.append(Char([1, 1, 1, 1], (0, 0, 255))) # + 63
 char_image = Image.new('RGB', (40, 40), 'white')
 
 pubkey = open('receiver.pem','r').read()
-msg = input("Message\n> ").encode('utf-8')
+msg = input("Enter secret message to encrypt.\n> ").encode('utf-8')
 public_key = RSA.importKey(pubkey)
 cipher = PKCS1_v1_5.new(public_key)
 new_msg = cipher.encrypt(msg)
@@ -142,3 +142,4 @@ for num in string_new:
         print(num)
 
 char_image.save('CODE.png')
+input("Image saved. Press <ENTER> to close.")
