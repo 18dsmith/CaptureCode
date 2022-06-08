@@ -24,3 +24,4 @@ Finally, you are able to run **textdecrypt.py** which will scan your image and u
 
 ## Version info
 Recent version: v0.5.0
+For any questions, concerns, or bug reports, [contact me](mailto:18dsmith@wakatipu.school.nz).
