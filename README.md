@@ -23,5 +23,6 @@ Next, run **textformat.py**. This will take an input, encrypt it using your publ
 Finally, you are able to run **textdecrypt.py** which will scan your image and use your private key to decrypt the information and repeat your secret message back to you.
 
 ## Version info
-Recent version: v0.5.0
+Recent version: v0.5.1
+
 For any questions, concerns, or bug reports, [contact me](mailto:18dsmith@wakatipu.school.nz).
