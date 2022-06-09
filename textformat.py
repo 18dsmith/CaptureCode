@@ -106,8 +106,13 @@ character_list.append(Char([1, 1, 1, 1], (0, 0, 255))) # + 63
 
 char_image = Image.new('RGB', (40, 40), 'white')
 
-pubkey = open('receiver.pem','r').read()
+try:
+    pubkey = open('keys/receiver.pem','r').read()
+except FileNotFoundError:
+    input("Error: No keys found.\nPossible fix: Run key_gen.py file.\nPress <ENTER> to close.")
+    exit()
 msg = input("Enter secret message to encrypt.\n> ").encode('utf-8')
+print("Encrypting...")
 public_key = RSA.importKey(pubkey)
 cipher = PKCS1_v1_5.new(public_key)
 new_msg = cipher.encrypt(msg)
@@ -140,6 +145,8 @@ for num in string_new:
         count += 1
     except:
         print(num)
-
-char_image.save('CODE.png')
+name = "codes/"
+name += input("Message encrypted. Enter title (this is what you will use to choose which message to access)\n> ")
+name += ".png"
+char_image.save(name)
 input("Image saved. Press <ENTER> to close.")

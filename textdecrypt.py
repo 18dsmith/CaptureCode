@@ -109,7 +109,14 @@ def convert_to_string(count):
     char_instructions.append(colour)
     instruction_list.append(char_instructions)
 
-char_image = Image.open("CODE.png")
+name = "codes/"
+name += input("Enter title of saved code.\n> ")
+name += ".png"
+try:
+    char_image = Image.open(name)
+except:
+    input(f"Error: Unable to find file {name}\nPossible fix: Check your spelling of the filename.\nPress <ENTER> to close.")
+    exit()
 
 pixels = char_image.load()
 instruction_list = []
@@ -127,11 +134,18 @@ extra = 4 - (len(string_new) % 4)
 if extra != 4:
     string_new += extra * "="
 
-privkey = open('private.pem','r').read()
+try:
+    privkey = open('keys/private.pem','r').read()
+except FileNotFoundError:
+    input("Error: No keys found.\nPossible fix: Run key_gen.py file.\nPress <ENTER> to close.")
+    exit()
+    
 private_key = RSA.importKey(privkey)
 decryptor = PKCS1_v1_5.new(private_key)
 string_new = b64decode(string_new)
 decrypted = decryptor.decrypt(string_new, "error")
 decrypted = decrypted.decode('utf-8')
 print('Decrypted:', decrypted)
+if len(decrypted) == 0:
+    print("Hmm, that's a short message. Are you using the same public/private keys as when you generated it?")
 input("Press <ENTER> to close.")
