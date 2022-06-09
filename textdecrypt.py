@@ -109,8 +109,7 @@ def convert_to_string(count):
     char_instructions.append(colour)
     instruction_list.append(char_instructions)
 
-name = "codes/"
-name += input("Enter title of saved code.\n> ")
+name = input("Enter title of saved code.\n> ")
 name += ".png"
 try:
     char_image = Image.open(name)
@@ -135,7 +134,7 @@ if extra != 4:
     string_new += extra * "="
 
 try:
-    privkey = open('keys/private.pem','r').read()
+    privkey = open('private.pem','r').read()
 except FileNotFoundError:
     input("Error: No keys found.\nPossible fix: Run key_gen.py file.\nPress <ENTER> to close.")
     exit()

@@ -107,7 +107,7 @@ character_list.append(Char([1, 1, 1, 1], (0, 0, 255))) # + 63
 char_image = Image.new('RGB', (40, 40), 'white')
 
 try:
-    pubkey = open('keys/receiver.pem','r').read()
+    pubkey = open('receiver.pem','r').read()
 except FileNotFoundError:
     input("Error: No keys found.\nPossible fix: Run key_gen.py file.\nPress <ENTER> to close.")
     exit()
@@ -145,8 +145,9 @@ for num in string_new:
         count += 1
     except:
         print(num)
-name = "codes/"
-name += input("Message encrypted. Enter title (this is what you will use to choose which message to access)\n> ")
+
+name = input("Message encrypted. Enter title (this is what you will use to choose which message to access)\n> ")
 name += ".png"
+
 char_image.save(name)
 input("Image saved. Press <ENTER> to close.")
