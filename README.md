@@ -10,6 +10,9 @@ In command prompt do the following:
 ```
 pip install pycryptodome
 ```
+```
+pip install pycryptodome
+```
 From there, you are able to use the program. See below for usage instructions.
 
 ## Usage
